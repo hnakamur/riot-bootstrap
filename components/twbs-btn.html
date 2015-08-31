@@ -14,11 +14,31 @@
       btn-sm: opts.size === 'sm',
       btn-xs: opts.size === 'xs'
     }
-    disabled={ opts.disabled }
+    disabled={ disabled }
+    onclick={ push }
     ><yield/></button>
 
   <script>
-    this.option = this.opts.option || 'default'
+    updateProperties(e) {
+      this.option = opts.option || 'default'
+      this.disabled = opts.__disabled || opts.disabled === '' || opts.disabled === 'disabled'
+    }
+    this.on('update', this.updateProperties)
+
+    push(e) {
+      if (opts.href) {
+        e.preventUpdate = true
+        location.href = opts.href
+        return
+      }
+      if (opts.onpush) {
+        e.preventUpdate = true
+        opts.onpush(e)
+        this.update()
+      }
+    }
+
+    this.mixin('parentScope')
   </script>
 
 </twbs-btn>

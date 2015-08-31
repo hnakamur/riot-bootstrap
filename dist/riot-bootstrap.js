@@ -212,8 +212,27 @@ riot.tag('radio', '<button type="button" __disabled="{ opts.disabled }" data-sel
   
 });
 
-riot.tag('twbs-btn', '<button class="{ btn: true, btn-default: option === \'default\', btn-primary: option === \'primary\', btn-success: option === \'success\', btn-info: option === \'info\', btn-warning: option === \'warning\', btn-danger: option === \'danger\', btn-link: option === \'link\', btn-lg: opts.size === \'lg\', btn-sm: opts.size === \'sm\', btn-xs: opts.size === \'xs\' }" __disabled="{ opts.disabled }" ><yield></yield></button>', function(opts) {
-    this.option = this.opts.option || 'default'
+riot.tag('twbs-btn', '<button class="{ btn: true, btn-default: option === \'default\', btn-primary: option === \'primary\', btn-success: option === \'success\', btn-info: option === \'info\', btn-warning: option === \'warning\', btn-danger: option === \'danger\', btn-link: option === \'link\', btn-lg: opts.size === \'lg\', btn-sm: opts.size === \'sm\', btn-xs: opts.size === \'xs\' }" __disabled="{ disabled }" onclick="{ push }" ><yield></yield></button>', function(opts) {
+    this.updateProperties = function(e) {
+      this.option = opts.option || 'default'
+      this.disabled = opts.__disabled || opts.disabled === '' || opts.disabled === 'disabled'
+    }.bind(this);
+    this.on('update', this.updateProperties)
+
+    this.push = function(e) {
+      if (opts.href) {
+        e.preventUpdate = true
+        location.href = opts.href
+        return
+      }
+      if (opts.onpush) {
+        e.preventUpdate = true
+        opts.onpush(e)
+        this.update()
+      }
+    }.bind(this);
+
+    this.mixin('parentScope')
   
 });
 
