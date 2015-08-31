@@ -7,7 +7,7 @@
 
 var riot = (!window || !window.riot) ? require('riot') : window.riot;
 
-riot.tag('btn-group', '<yield></yield>', 'btn-group , [riot-tag="btn-group"] { position: relative; display: inline-block; vertical-align: middle; } btn-group btn, [riot-tag="btn-group"] btn{ position: relative; float: left; } btn-group btn + btn, [riot-tag="btn-group"] btn + btn{ margin-left: -1px; } btn-group btn[toggle]:not(:first-child) > *, [riot-tag="btn-group"] btn[toggle]:not(:first-child) > *{ padding-right: 8px; padding-left: 8px; } btn-group > btn:hover, [riot-tag="btn-group"] > btn:hover,btn-group > btn:focus, [riot-tag="btn-group"] > btn:focus,btn-group > btn:active, [riot-tag="btn-group"] > btn:active{ z-index: 2; } btn-group > btn:not(:first-child):not(:last-child):not([toggle]) > *, [riot-tag="btn-group"] > btn:not(:first-child):not(:last-child):not([toggle]) > *{ border-radius: 0; } btn-group > btn:first-child, [riot-tag="btn-group"] > btn:first-child{ margin-left: 0; } btn-group > btn:first-child:not(:last-child):not([toggle]) > *, [riot-tag="btn-group"] > btn:first-child:not(:last-child):not([toggle]) > *{ border-top-right-radius: 0; border-bottom-right-radius: 0; } btn-group > btn:last-child:not(:first-child) > *, [riot-tag="btn-group"] > btn:last-child:not(:first-child) > *,btn-group > btn:not(:first-child)[toggle] > *, [riot-tag="btn-group"] > btn:not(:first-child)[toggle] > *{ border-top-left-radius: 0; border-bottom-left-radius: 0; }', function(opts) {
+riot.tag('btn-group', '<yield></yield>', 'btn-group, [riot-tag="btn-group"]{ position: relative; display: inline-block; vertical-align: middle; } btn-group btn, [riot-tag="btn-group"] btn{ position: relative; float: left; } btn-group btn + btn, [riot-tag="btn-group"] btn + btn{ margin-left: -1px; } btn-group btn[toggle]:not(:first-child) > *, [riot-tag="btn-group"] btn[toggle]:not(:first-child) > *{ padding-right: 8px; padding-left: 8px; } btn-group > btn:hover, [riot-tag="btn-group"] > btn:hover,btn-group > btn:focus, [riot-tag="btn-group"] > btn:focus,btn-group > btn:active, [riot-tag="btn-group"] > btn:active{ z-index: 2; } btn-group > btn:not(:first-child):not(:last-child):not([toggle]) > *, [riot-tag="btn-group"] > btn:not(:first-child):not(:last-child):not([toggle]) > *{ border-radius: 0; } btn-group > btn:first-child, [riot-tag="btn-group"] > btn:first-child{ margin-left: 0; } btn-group > btn:first-child:not(:last-child):not([toggle]) > *, [riot-tag="btn-group"] > btn:first-child:not(:last-child):not([toggle]) > *{ border-top-right-radius: 0; border-bottom-right-radius: 0; } btn-group > btn:last-child:not(:first-child) > *, [riot-tag="btn-group"] > btn:last-child:not(:first-child) > *,btn-group > btn:not(:first-child)[toggle] > *, [riot-tag="btn-group"] > btn:not(:first-child)[toggle] > *{ border-top-left-radius: 0; border-bottom-left-radius: 0; }', function(opts) {
     this.mixin('parentScope')
   
 });
@@ -41,7 +41,7 @@ riot.tag('btn', '<button type="button" __disabled="{ disabled }" data-option="{ 
   
 });
 
-riot.tag('caret', '', 'caret , [riot-tag="caret"] { display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px dashed; border-right: 4px solid transparent; border-left: 4px solid transparent; }', function(opts) {
+riot.tag('caret', '', 'caret, [riot-tag="caret"]{ display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px dashed; border-right: 4px solid transparent; border-left: 4px solid transparent; }', function(opts) {
   
 
 });
@@ -110,12 +110,12 @@ riot.tag('input-img', '<img riot-src="{ image }" width="{ width }" height="{ hei
   
 });
 
-riot.tag('menu-divider', '', 'menu-divider , [riot-tag="menu-divider"] { display: block; height: 1px; margin: 9px 0; overflow: hidden; background-color: #e5e5e5; }', function(opts) {
+riot.tag('menu-divider', '', 'menu-divider, [riot-tag="menu-divider"]{ display: block; height: 1px; margin: 9px 0; overflow: hidden; background-color: #e5e5e5; }', function(opts) {
   
 
 });
 
-riot.tag('menu-header', '<yield></yield>', 'menu-header , [riot-tag="menu-header"] { display: block; padding: 3px 20px; font-size: 12px; line-height: 1.42857143; color: #777; white-space: nowrap; }', function(opts) {
+riot.tag('menu-header', '<yield></yield>', 'menu-header, [riot-tag="menu-header"]{ display: block; padding: 3px 20px; font-size: 12px; line-height: 1.42857143; color: #777; white-space: nowrap; }', function(opts) {
     this.mixin('parentScope')
   
 });
@@ -142,7 +142,7 @@ riot.tag('menu-item', '<yield></yield>', 'menu-item { display: block; padding: 3
   
 });
 
-riot.tag('menu', '<yield></yield>', 'menu , [riot-tag="menu"] { position: absolute; top: 100%; left: 0; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px 0; margin: 2px 0 0; font-size: 14px; text-align: left; list-style: none; background-color: #fff; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, .15); border-radius: 4px; box-shadow: 0 6px 12px rgba(0, 0, 0, .175); }', function(opts) {
+riot.tag('menu', '<yield></yield>', 'menu, [riot-tag="menu"]{ position: absolute; top: 100%; left: 0; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px 0; margin: 2px 0 0; font-size: 14px; text-align: left; list-style: none; background-color: #fff; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, .15); border-radius: 4px; box-shadow: 0 6px 12px rgba(0, 0, 0, .175); }', function(opts) {
     var opened = false
 
     this.open = function(e) {
@@ -177,7 +177,7 @@ riot.tag('menu', '<yield></yield>', 'menu , [riot-tag="menu"] { position: absolu
   
 });
 
-riot.tag('radio-group', '<yield></yield>', 'radio-group , [riot-tag="radio-group"] { position: relative; display: inline-block; vertical-align: middle; } radio-group radio, [riot-tag="radio-group"] radio{ position: relative; float: left; } radio-group radio + radio, [riot-tag="radio-group"] radio + radio{ margin-left: -1px; } radio-group radio[toggle]:not(:first-child) > *, [riot-tag="radio-group"] radio[toggle]:not(:first-child) > *{ padding-right: 8px; padding-left: 8px; } radio-group > radio:hover, [riot-tag="radio-group"] > radio:hover,radio-group > radio:focus, [riot-tag="radio-group"] > radio:focus,radio-group > radio:active, [riot-tag="radio-group"] > radio:active{ z-index: 2; } radio-group > radio:not(:first-child):not(:last-child):not([toggle]) > *, [riot-tag="radio-group"] > radio:not(:first-child):not(:last-child):not([toggle]) > *{ border-radius: 0; } radio-group > radio:first-child, [riot-tag="radio-group"] > radio:first-child{ margin-left: 0; } radio-group > radio:first-child:not(:last-child):not([toggle]) > *, [riot-tag="radio-group"] > radio:first-child:not(:last-child):not([toggle]) > *{ border-top-right-radius: 0; border-bottom-right-radius: 0; } radio-group > radio:last-child:not(:first-child) > *, [riot-tag="radio-group"] > radio:last-child:not(:first-child) > *,radio-group > radio:not(:first-child)[toggle] > *, [riot-tag="radio-group"] > radio:not(:first-child)[toggle] > *{ border-top-left-radius: 0; border-bottom-left-radius: 0; }', function(opts) {
+riot.tag('radio-group', '<yield></yield>', 'radio-group, [riot-tag="radio-group"]{ position: relative; display: inline-block; vertical-align: middle; } radio-group radio, [riot-tag="radio-group"] radio{ position: relative; float: left; } radio-group radio + radio, [riot-tag="radio-group"] radio + radio{ margin-left: -1px; } radio-group radio[toggle]:not(:first-child) > *, [riot-tag="radio-group"] radio[toggle]:not(:first-child) > *{ padding-right: 8px; padding-left: 8px; } radio-group > radio:hover, [riot-tag="radio-group"] > radio:hover,radio-group > radio:focus, [riot-tag="radio-group"] > radio:focus,radio-group > radio:active, [riot-tag="radio-group"] > radio:active{ z-index: 2; } radio-group > radio:not(:first-child):not(:last-child):not([toggle]) > *, [riot-tag="radio-group"] > radio:not(:first-child):not(:last-child):not([toggle]) > *{ border-radius: 0; } radio-group > radio:first-child, [riot-tag="radio-group"] > radio:first-child{ margin-left: 0; } radio-group > radio:first-child:not(:last-child):not([toggle]) > *, [riot-tag="radio-group"] > radio:first-child:not(:last-child):not([toggle]) > *{ border-top-right-radius: 0; border-bottom-right-radius: 0; } radio-group > radio:last-child:not(:first-child) > *, [riot-tag="radio-group"] > radio:last-child:not(:first-child) > *,radio-group > radio:not(:first-child)[toggle] > *, [riot-tag="radio-group"] > radio:not(:first-child)[toggle] > *{ border-top-left-radius: 0; border-bottom-left-radius: 0; }', function(opts) {
     this.value = opts.value
 
     this.set = function(value) {
@@ -209,6 +209,11 @@ riot.tag('radio', '<button type="button" __disabled="{ opts.disabled }" data-sel
     }.bind(this);
 
     this.parent.on('change', this.check)
+  
+});
+
+riot.tag('twbs-btn', '<button class="{ btn: true, btn-default: option === \'default\', btn-primary: option === \'primary\', btn-success: option === \'success\', btn-info: option === \'info\', btn-warning: option === \'warning\', btn-danger: option === \'danger\', btn-link: option === \'link\', btn-lg: opts.size === \'lg\', btn-sm: opts.size === \'sm\', btn-xs: opts.size === \'xs\' }" __disabled="{ opts.disabled }" ><yield></yield></button>', function(opts) {
+    this.option = this.opts.option || 'default'
   
 });
 

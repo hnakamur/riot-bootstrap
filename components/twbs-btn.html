@@ -1,0 +1,24 @@
+<twbs-btn>
+
+  <button
+    class={
+      btn: true,
+      btn-default: option === 'default',
+      btn-primary: option === 'primary',
+      btn-success: option === 'success',
+      btn-info: option === 'info',
+      btn-warning: option === 'warning',
+      btn-danger: option === 'danger',
+      btn-link: option === 'link',
+      btn-lg: opts.size === 'lg',
+      btn-sm: opts.size === 'sm',
+      btn-xs: opts.size === 'xs'
+    }
+    disabled={ opts.disabled }
+    ><yield/></button>
+
+  <script>
+    this.option = this.opts.option || 'default'
+  </script>
+
+</twbs-btn>
