@@ -212,10 +212,18 @@ riot.tag('radio', '<button type="button" __disabled="{ opts.disabled }" data-sel
   
 });
 
+riot.tag('twbs-btn-group', '<yield></yield>', function(opts) {
+    this.mixin('parentScope')
+  
+});
+
 riot.tag('twbs-btn', '<button class="{ btn: true, btn-default: option === \'default\', btn-primary: option === \'primary\', btn-success: option === \'success\', btn-info: option === \'info\', btn-warning: option === \'warning\', btn-danger: option === \'danger\', btn-link: option === \'link\', btn-lg: opts.size === \'lg\', btn-sm: opts.size === \'sm\', btn-xs: opts.size === \'xs\' }" __disabled="{ disabled }" onclick="{ push }" ><yield></yield></button>', function(opts) {
     this.updateProperties = function(e) {
       this.option = opts.option || 'default'
-      this.disabled = opts.__disabled || opts.disabled === '' || opts.disabled === 'disabled'
+      this.disabled =
+        opts.hasOwnProperty('__disabled') ? opts.__disabled :
+        opts.hasOwnProperty('disabled') ? opts.disabled === '' || opts.disabled === 'disabled' :
+        false
     }.bind(this);
     this.on('update', this.updateProperties)
 
@@ -228,7 +236,7 @@ riot.tag('twbs-btn', '<button class="{ btn: true, btn-default: option === \'defa
       if (opts.onpush) {
         e.preventUpdate = true
         opts.onpush(e)
-        this.update()
+        this.updateCaller(opts.onpush)
       }
     }.bind(this);
 

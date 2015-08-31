@@ -1,0 +1,57 @@
+<app-twbs-btn-group>
+
+  <h2>Button groups</h2>
+
+  <p>Group a series of buttons together on a single line with the button group. </p>
+
+  <section>
+    <twbs-btn-group>
+      <twbs-btn onpush={ pushL }>Left</twbs-btn>
+      <twbs-btn onpush={ pushM }>Middle</twbs-btn>
+      <twbs-btn onpush={ pushR }>Right</twbs-btn>
+    </twbs-btn-group>
+    <twbs-btn-group>
+      <twbs-btn onpush={ toggle } disabled={ isOn }>Turn On</twbs-btn>
+      <twbs-btn onpush={ toggle } disabled={ !isOn }>Turn Off</twbs-btn>
+    </twbs-btn-group>
+    <p class="comment">{ comment }</p>
+  </section>
+
+  <highlight>
+    &lt;twbs-btn-group&gt;<br>
+    &nbsp;&lt;twbs-btn onpush=\{ pushL }&gt;Left&lt;/twbs-btn&gt;<br>
+    &nbsp;&lt;twbs-btn onpush=\{ pushM }&gt;Middle&lt;/twbs-btn&gt;<br>
+    &nbsp;&lt;twbs-btn onpush=\{ pushR }&gt;Right&lt;/twbs-btn&gt;<br>
+    &lt;/twbs-btn-group&gt;<br>
+    &lt;twbs-btn-group&gt;<br>
+    &nbsp;&lt;twbs-btn onpush=\{ toggle } disabled=\{ isOn }&gt;Turn Off&lt;/twbs-btn&gt;<br>
+    &nbsp;&lt;twbs-btn onpush=\{ toggle } disabled=\{ !isOn }&gt;Turn On&lt;/twbs-btn&gt;<br>
+    &lt;/twbs-btn-group&gt;
+  </highlight>
+
+  <script>
+    this.comment = 'Click me!'
+    this.isOn = false
+
+    pushL (e) {
+      this.comment = 'Left button was clicked.'
+    }
+    pushM (e) {
+      this.comment = 'Middle button was clicked.'
+    }
+    pushR (e) {
+      this.comment = 'Right button was clicked.'
+    }
+
+    toggle (e) {
+      this.isOn = !this.isOn
+    }
+  </script>
+
+  <style scoped>
+    :scope {
+      display: block;
+    }
+  </style>
+
+</app-twbs-btn-group>

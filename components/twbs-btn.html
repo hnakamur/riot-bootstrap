@@ -21,7 +21,10 @@
   <script>
     updateProperties(e) {
       this.option = opts.option || 'default'
-      this.disabled = opts.__disabled || opts.disabled === '' || opts.disabled === 'disabled'
+      this.disabled =
+        opts.hasOwnProperty('__disabled') ? opts.__disabled :
+        opts.hasOwnProperty('disabled') ? opts.disabled === '' || opts.disabled === 'disabled' :
+        false
     }
     this.on('update', this.updateProperties)
 
@@ -34,7 +37,7 @@
       if (opts.onpush) {
         e.preventUpdate = true
         opts.onpush(e)
-        this.update()
+        this.updateCaller(opts.onpush)
       }
     }
 
